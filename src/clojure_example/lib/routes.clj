@@ -17,10 +17,8 @@
 (defn get-friends-route [req]
 	"Echo back a name"
 	{:status 200
-		:headers {"Content-Type" "text/html"}
-		:body (-> 
-		(api/get-friends))})
-		; (str "Hello " (:name (:params req) )))})
+		:headers {"Content-Type" "application/json"}
+		:body (-> (api/get-friends))})
 
 (defn add-friend-route [req]
 	"Endpoint for adding a friend"
