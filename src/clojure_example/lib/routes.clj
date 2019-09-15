@@ -8,20 +8,23 @@
 		[clojure-example.lib.api :as api])
 	(:gen-class))
 
-(defn echo-route [req]
+(defn echo-route 
 	"Echo back the request"
+  [req]
 	{:status 200
-		:headers {"Content-Type" "text/html"}
-		:body (-> (str "GET '/' " req))})
+   :headers {"Content-Type" "text/html"}
+   :body (-> (str "GET '/' " req))})
 
-(defn get-friends-route [req]
+(defn get-friends-route 
 	"Echo back a name"
+  [req]
 	{:status 200
-		:headers {"Content-Type" "application/json"}
-		:body (-> (api/get-friends))})
+	 :headers {"Content-Type" "application/json"}
+	 :body (-> (api/get-friends))})
 
-(defn add-friend-route [req]
+(defn add-friend-route 
 	"Endpoint for adding a friend"
+  [req]
 	{:status 200
-		:headers {"Content-Type" "application/json"}
-		:body (-> (api/add-friend (req :params)))})
+	 :headers {"Content-Type" "application/json"}
+	 :body (-> (api/add-friend (req :params)))})
